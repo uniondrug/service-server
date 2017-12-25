@@ -6,11 +6,13 @@
 * Phalcon `3.2+`
 
 
-### Request
+### Methods
+
 1. `withError`(`string`, `int`)
-1. `withObject`(`array`)
 1. `withList`(`array`)
-1. `withPaging`(`array`)
+1. `withObject`(`array`)
+1. `withPaging`(`array`, `ResponsePaging`)
+1. `withSuccess`()
 1. `setPaging`(`int`, `int`, `int`)
 
 ```php
@@ -35,10 +37,7 @@ public function postAction(){
     └── uniondrug
         └── service-server
             ├── src
-            │   ├── Data.php
-            │   ├── Paging.php
-            │   ├── Response.php
-            │   └── Response.php
+            │   └── Server.php
             └── README.md
 ```
 
