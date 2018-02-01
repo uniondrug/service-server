@@ -1,9 +1,11 @@
 <?php
 /**
  * 微服务
+ *
  * @author wsfuyibing <websearch@163.com>
- * @date 2017-12-21
+ * @date   2017-12-21
  */
+
 namespace UniondrugServiceServer;
 
 use UniondrugService\Exception;
@@ -17,8 +19,9 @@ use UniondrugService\ResponseWriter;
  * @method ResponseData withError(string $error, int $errno)
  * @method ResponseData withList(array $data)
  * @method ResponseData withObject(array $data)
- * @method ResponseData withPaging(array|\Phalcon\Paginator\Adapter\QueryBuilder $data, ResponsePaging $paging = null)
+ * @method ResponseData withPaging(array | \stdClass $data, ResponsePaging $paging = null)
  * @method ResponseData withSuccess()
+ *
  * @package UniondrugServiceServer
  */
 class Server extends \stdClass
@@ -31,7 +34,7 @@ class Server extends \stdClass
     /**
      * Magic Dispatcher
      *
-     * @param string $name 方法名称
+     * @param string $name      方法名称
      * @param array  $arguments 方法接受的参数
      *
      * @return ResponseData
@@ -45,7 +48,7 @@ class Server extends \stdClass
         if (method_exists(self::$response, $name)) {
             return call_user_func_array([
                 self::$response,
-                $name
+                $name,
             ], $arguments);
         }
         throw new Exception("微服务的服务端未定义'{$name}'方法");
